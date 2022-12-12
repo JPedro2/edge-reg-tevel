@@ -67,9 +67,8 @@ export default function Form({ applianceId }) {
         )}
       </div>
       <h1 className={styles.title}>
-       //<span className="accent">{name}</span> Edge Host Registration!
+       //<span className="accent">{name}</span> Edge Onboarding - Host Registration
         Edge Onboarding - Host Registration
-        {/* <code className={styles.code}>pages/no-js-from.js</code> */}
       </h1>
       <p className={styles.description}>
         Register the Edge Host with Palette
