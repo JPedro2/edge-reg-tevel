@@ -127,25 +127,16 @@ export default function Form({ applianceId }) {
             required
           />
         </div>
-        <label htmlFor="paletteProject">City</label>
+        <label htmlFor="paletteProject">Region</label>
         <select id="project" name="project" required>
-          <option value="Atlanta">
-            Atlanta
+          <option value="US West">
+            US West
           </option>
-          <option value="Cleveland">
-            Cleveland
+          <option value="US East">
+            US East
           </option>
-          <option value="Dallas">
-            Dallas
-          </option>
-          <option value="New York">
-            Stores
-          </option>
-          <option value="Pittsburgh">
-            Pittsburgh
-          </option>
-          <option value="Seattle">
-            Seattle
+          <option value="Europe">
+            Europe
           </option>
         </select>
 
