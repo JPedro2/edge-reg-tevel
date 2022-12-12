@@ -108,7 +108,8 @@ export function DemoSettingsProvider({ children }: { children: React.ReactNode }
         options: [
           "Store",
           "Hospital",
-          "Location"
+          "Location",
+          "City"
         ]
       },
       backgroundColor: defaultSettings.backgroundColor,
