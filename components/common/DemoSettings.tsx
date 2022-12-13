@@ -86,7 +86,7 @@ const ACME_SETTINGS = {
   selectionLabel: 'Store',
   backgroundColor: "#fff",
   textColor: "#000",
-  maxSize: 54
+  maxLogoSize: 54
 }
 
 export function DemoSettingsProvider({ children }: { children: React.ReactNode }) {
@@ -101,7 +101,7 @@ export function DemoSettingsProvider({ children }: { children: React.ReactNode }
       accentColor: defaultSettings.accentColor,
       maxLogoSize: {
         label: "Max Logo Size",
-        value: defaultSettings.maxSize
+        value: defaultSettings.maxLogoSize || 54
       },
       logo: {
         image: defaultSettings.logo,
