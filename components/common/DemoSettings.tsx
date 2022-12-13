@@ -61,7 +61,7 @@ function resizeImage(blob, settings) {
 };
 
 async function stringifySettings(controls) {
-  const resizedImg = await resizeImage(controls.logo, { maxSize: 100 });
+  const resizedImg = await resizeImage(controls.logo, { maxSize: controls.maxLogoSize || 100 });
   console.log(controls.logo, resizedImg)
   return { ...controls, logo: resizedImg }
 }
@@ -86,6 +86,7 @@ const ACME_SETTINGS = {
   selectionLabel: 'Store',
   backgroundColor: "#fff",
   textColor: "#000",
+  maxSize: 54
 }
 
 export function DemoSettingsProvider({ children }: { children: React.ReactNode }) {
@@ -98,9 +99,13 @@ export function DemoSettingsProvider({ children }: { children: React.ReactNode }
     company: folder({
       name: defaultSettings.name,
       accentColor: defaultSettings.accentColor,
+      maxLogoSize: {
+        label: "Max Logo Size",
+        value: defaultSettings.maxSize
+      },
       logo: {
         image: defaultSettings.logo,
-      }
+      },
     }),
     ui: folder({
       selectionLabel: {

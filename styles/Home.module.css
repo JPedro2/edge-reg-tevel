@@ -161,6 +161,22 @@
   max-height: 100px;
 }
 
+.company-name {
+  display: none;
+}
+
+
+.footer {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.footer img {
+  max-width: 100px;
+  height: auto;
+  margin: 0 10px;
+}
 
 @media screen and (max-width: 600px) {
   .title {

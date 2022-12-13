@@ -7,7 +7,8 @@ import { faCircleNotch, faCompass } from "@fortawesome/free-solid-svg-icons";
 import useDemoControls from "components/common/DemoSettings";
 import useSSR from "components/common/SSR";
 import Image from "next/image";
-
+import canonical from "../assets/canonical.png";
+import spectro from "../assets/spectro.png";
 
 export default function Form({ applianceId }) {
   const appliance = useRef(null);
@@ -19,7 +20,7 @@ export default function Form({ applianceId }) {
   const [applianceLabelValue, setApplianceLabelValue] = useState("");
   const [applianceNameValue, setApplianceNameValue] = useState("");
 
-  const { name, selectionLabel, logo } = useDemoControls();
+  const { name, selectionLabel, logo, maxLogoSize } = useDemoControls();
 
   async function fun() {
     setDisabled(true);
@@ -61,13 +62,17 @@ export default function Form({ applianceId }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.logoWrap}>
-        {isSSR ? null : (
+      {isSSR ? null : (
+        <div
+          className={styles.logoWrap}
+          style={{ maxWidth: `${maxLogoSize}px` }}
+        >
           <img className={styles.logo} src={logo} alt="demo logo" />
-        )}
-      </div>
+        </div>
+      )}
       <h1 className={styles.title}>
-       <span className="accent">{name}</span> Edge Onboarding
+        <span className={`${styles["company-name"]} accent`}>{name}</span> Edge
+        Onboarding
       </h1>
       <p className={styles.description}>
         Register the Edge Host with Palette
@@ -80,26 +85,21 @@ export default function Form({ applianceId }) {
         onSubmit={() => setIsSubmitting(true)}
       >
         <label htmlFor="appliance">Edge Machine ID</label>
-          <div style={{ display: "flex" }}>
-            <input
-              value={applianceValue}
-              onChange={(ev) => setApplianceValue(ev.target.value)}
-              style={{ flexGrow: 1 }}
-              type="text"
-              ref={appliance}
-              id="appliance"
-              name="appliance"
-              required
-            />
-          
-            <button
-              className={styles.scan}
-              disabled={isDisabled}
-              onClick={fun}
-            >
-              <FontAwesomeIcon icon={faCompass} />
-            </button>
-          </div>
+        <div style={{ display: "flex" }}>
+          <input
+            value={applianceValue}
+            onChange={(ev) => setApplianceValue(ev.target.value)}
+            style={{ flexGrow: 1 }}
+            type="text"
+            ref={appliance}
+            id="appliance"
+            name="appliance"
+            required
+          />
+          <button className={styles.scan} disabled={isDisabled} onClick={fun}>
+            <FontAwesomeIcon icon={faCompass} />
+          </button>
+        </div>
         <label htmlFor="name">Device Name</label>
         <div style={{ display: "flex" }}>
           <input
@@ -129,23 +129,21 @@ export default function Form({ applianceId }) {
         </div>
         <label htmlFor="paletteProject">Region</label>
         <select id="project" name="project" required>
-          <option value="US West">
-            US West
-          </option>
-          <option value="US East">
-            US East
-          </option>
-          <option value="Europe">
-            Europe
-          </option>
+          <option value="US West">US West</option>
+          <option value="US East">US East</option>
+          <option value="Europe">Europe</option>
         </select>
-
 
         <button type="submit" disabled={isSubmitting}>
           Submit
           {isSubmitting ? <FontAwesomeIcon icon={faCircleNotch} spin /> : null}
         </button>
       </form>
+      <footer className={styles.footer}>
+        Powered by
+        <Image src={canonical} /> +
+        <Image src={spectro} />
+      </footer>
     </div>
   );
 }
