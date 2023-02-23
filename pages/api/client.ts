@@ -23,7 +23,7 @@ export default class Client {
     return axios.post(url, {
       emailId: this.username,
       password: this.password,
-      org: "pwp",
+      org: process.env.ORG,
     }, {timeout: 5000, httpsAgent: httpsProxyAgent, proxy: false})
       .then(response => response.data)
       .catch(e => {
