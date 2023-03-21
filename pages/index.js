@@ -141,7 +141,6 @@ export default function Form({ applianceId }) {
       </form>
       <footer className={styles.footer}>
         Powered by
-        <Image src={canonical} /> +
         <Image src={spectro} />
       </footer>
     </div>
