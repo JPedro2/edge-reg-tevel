@@ -7,7 +7,7 @@ import { faCircleNotch, faCompass } from "@fortawesome/free-solid-svg-icons";
 import useDemoControls from "components/common/DemoSettings";
 import useSSR from "components/common/SSR";
 import Image from "next/image";
-import canonical from "../assets/canonical.png";
+import tevel from "../assets/tevel.png";
 import spectro from "../assets/spectro.png";
 
 export default function Form({ applianceId }) {
@@ -67,15 +67,15 @@ export default function Form({ applianceId }) {
           className={styles.logoWrap}
           style={{ maxWidth: `${maxLogoSize}px` }}
         >
-          <img className={styles.logo} src={logo} alt="demo logo" />
+          <img className={styles.logo} src={tevel} alt="demo logo" />
         </div>
       )}
       <h1 className={styles.title}>
-        <span className={`${styles["company-name"]} accent`}>{name}</span> Edge
-        Onboarding
+        {/*<span className={`${styles["company-name"]} accent`}>{name}</span>*/} 
+        Edge Device Registration
       </h1>
       <p className={styles.description}>
-        Register the Edge Host with Palette
+        Register the bin with Palette
         {/* <code className={styles.code}>pages/no-js-from.js</code> */}
       </p>
 
