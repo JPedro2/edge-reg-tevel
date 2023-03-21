@@ -75,7 +75,7 @@ export default function Form({ applianceId }) {
         Edge Device Registration
       </h1>
       <p className={styles.description}>
-        Register the _bin_ with Palette
+        Register the <i>bin</i> with Palette
         {/* <code className={styles.code}>pages/no-js-from.js</code> */}
       </p>
 
