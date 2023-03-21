@@ -63,10 +63,10 @@ export default function Form({ applianceId }) {
   return (
     <div className={styles.container}>
       {isSSR ? null : (
-        <div
+       {/* <div
           className={styles.logoWrap}
           style={{ maxWidth: `${maxLogoSize}px` }}
-        >
+        > */}
           <img className={styles.logo} src={tevel} alt="demo logo" />
         </div>
       )}
@@ -75,7 +75,7 @@ export default function Form({ applianceId }) {
         Edge Device Registration
       </h1>
       <p className={styles.description}>
-        Register the bin with Palette
+        Register the _bin_ with Palette
         {/* <code className={styles.code}>pages/no-js-from.js</code> */}
       </p>
 
