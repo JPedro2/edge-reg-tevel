@@ -63,10 +63,10 @@ export default function Form({ applianceId }) {
   return (
     <div className={styles.container}>
       {isSSR ? null : (
-       {/* <div
+        <div
           className={styles.logoWrap}
           style={{ maxWidth: `${maxLogoSize}px` }}
-        > */}
+        >
           <img className={styles.logo} src={tevel} alt="demo logo" />
         </div>
       )}
