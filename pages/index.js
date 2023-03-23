@@ -65,13 +65,12 @@ export default function Form({ applianceId }) {
       {isSSR ? null : (
         <div
           className={styles.logoWrap}
-          style={{ maxWidth: `${maxLogoSize}px` }}
         >
-          <img className={styles.logo} src={tevel} alt="demo logo" />
+          <Image className={styles.logo} src={tevel} alt="demo logo" />
         </div>
       )}
       <h1 className={styles.title}>
-        {/*<span className={`${styles["company-name"]} accent`}>{name}</span>*/} 
+        {/*<span className={`${styles["company-name"]} accent`}>{name}</span>*/}
         Edge Device Registration
       </h1>
       <p className={styles.description}>
