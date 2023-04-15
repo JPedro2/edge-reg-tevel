@@ -113,7 +113,7 @@ export function DemoSettingsProvider({ children }: { children: React.ReactNode }
         options: [
           "Store",
           "Hospital",
-          "Location",
+          "Farm ID",
           "City"
         ]
       },
